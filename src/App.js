@@ -15,23 +15,29 @@ class App extends Component {
   render() {
   return (
     <AppWrapper>
-      <Header>
+      <Header />
         <Heading>
-          WEATHER TODAY 
-        <Form>
-            <input
-              type="text"
-              id="search"
-              name="search"
-              placeholder="Search town..."
-            />
-        </Form>
-      </Header>
+          WEATHER TODAY
+        </Heading>
+          <Form>
+              <input
+                type="text"
+                // id="search"
+                name="search"
+                placeholder="Search town..."
+              />
+          </Form>
+        {/* </Heading> */}
+      {/* </Header> */}
+    </AppWrapper>
+    );
+  }
+}
           
 
 
 
-      {/* <header className="App-header">
+      /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Boo
@@ -44,10 +50,7 @@ class App extends Component {
         >
          Yo mumma
         </a>
-      </header> */}
-    </AppWrapper>
-  );
-}
-}
+      </header> */
+
 
 export default App;
