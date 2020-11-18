@@ -17,7 +17,7 @@ class App extends Component {
     <AppWrapper>
       <Header>
         <Heading>
-          WEATHER TODAY 
+          WEATHER TODAY
         <Form>
             <input
               type="text"
