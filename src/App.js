@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import logo from './logo.svg';
 
@@ -11,6 +14,9 @@ import Footer from './styles/FooterStyle';
 import SocialLinkContainer from './styles/SocialLinkContainerStyle';
 import SocialLinkUl from './styles/SocialLinkUl';
 import SocialLinkLi from './styles/SocialLinkLi';
+import SocialButton from './styles/SocialButton';
+
+library.add(fab)
 
 const AppWrapper = styled.div`
   width:100vw;
@@ -35,16 +41,24 @@ class App extends Component {
       <Footer />
         <SocialLinkContainer>
             <SocialLinkLi>
-              <p>A</p>
+              <SocialButton href="https://www.facebook.com/harryjwneale" target="_blank">
+                <FontAwesomeIcon icon={["fab", "facebook"]} />
+              </SocialButton>
             </SocialLinkLi>
             <SocialLinkLi>
-              <p>B</p>
+              <SocialButton href="https://twitter.com/HWN_Dev" target="_blank">
+                <FontAwesomeIcon icon={["fab", "twitter"]} />
+              </SocialButton>
             </SocialLinkLi>
             <SocialLinkLi>
-              <p>C</p>
+              <SocialButton href="https://www.linkedin.com/in/harry-neale-092976125/" target="_blank">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+              </SocialButton>
             </SocialLinkLi>
             <SocialLinkLi>
-              <p>D</p>
+              <SocialButton href="https://github.com/hwn-dev" target="_blank">
+                <FontAwesomeIcon icon={["fab", "github"]} />
+              </SocialButton>
             </SocialLinkLi>
         </SocialLinkContainer>
     </AppWrapper>
