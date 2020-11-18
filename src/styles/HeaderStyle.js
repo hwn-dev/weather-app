@@ -5,7 +5,7 @@ const Header = styled.div`
     height:125px;
     position:fixed;
     display: flex;
-    border-bottom: 3px solid blue;
+    border-bottom: 5px solid #61dafb;
     background-color:black;
 `;
 
