@@ -12,6 +12,9 @@ import Heading from './styles/HeadingStyle';
 import Form from './styles/Form';
 import Main from './styles/Main';
 import Control from './styles/Control';
+import ControlButton from './styles/ControlButton';
+import Temp from './styles/Temp';
+import Divider from './styles/Divider';
 import Footer from './styles/FooterStyle';
 import SocialLinkContainer from './styles/SocialLinkContainerStyle';
 import SocialLinkUl from './styles/SocialLinkUl';
@@ -42,7 +45,18 @@ class App extends Component {
           </Form>
       <Main>
         <Control>
-          Hello
+          <ControlButton>
+            Andover
+          </ControlButton>
+          <ControlButton>
+            Woking
+          </ControlButton>
+          <Temp>
+            10&deg;
+          </Temp>
+          <Temp>
+            20&deg;
+          </Temp>
         </Control>
       </Main>
       <Footer />
