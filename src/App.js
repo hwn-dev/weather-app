@@ -10,6 +10,8 @@ import './App.css';
 import Header from './styles/HeaderStyle';
 import Heading from './styles/HeadingStyle';
 import Form from './styles/Form';
+import Main from './styles/Main';
+import Control from './styles/Control';
 import Footer from './styles/FooterStyle';
 import SocialLinkContainer from './styles/SocialLinkContainerStyle';
 import SocialLinkUl from './styles/SocialLinkUl';
@@ -29,7 +31,7 @@ class App extends Component {
     <AppWrapper>
       <Header />
         <Heading>
-          WEATHER TODAY
+          WEATHER
         </Heading>
           <Form>
               <input
@@ -38,6 +40,11 @@ class App extends Component {
                 placeholder="Search town..."
               />
           </Form>
+      <Main>
+        <Control>
+          Hello
+        </Control>
+      </Main>
       <Footer />
         <SocialLinkContainer>
             <SocialLinkLi>

@@ -3,10 +3,9 @@ import styled from 'styled-components';
 const SocialLinkContainer = styled.ul`
     position: fixed;
     width: 25%;
-    height: 50px;
-    background-color: black;
-    position: absolute;
-    margin-top: 820px;
+    height: 62px;
+    background-color: #01161E;
+    position: fixed;
     margin-left: 3.5rem;
     list-style: none;
 `;

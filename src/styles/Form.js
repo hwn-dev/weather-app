@@ -8,7 +8,7 @@ const Form = styled.form`
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 600;
-  position: absolute;
+  position: fixed;
   margin-top: 35px;
   label {
     color: white;
