@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ControlButton = styled.button`
+const ControlButtonStyle = styled.button`
     width:100%;
     height: 100px;
     background-color:#01161E;
@@ -12,4 +12,4 @@ const ControlButton = styled.button`
     border: 1px groove white;
 `;
 
-export default ControlButton;
+export default ControlButtonStyle;

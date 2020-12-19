@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Form = styled.form`
+const FormStyle = styled.form`
   margin-left: 70%;
   width: 250px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
@@ -31,4 +31,4 @@ const Form = styled.form`
   }
 `;
 
-export default Form;
+export default FormStyle;

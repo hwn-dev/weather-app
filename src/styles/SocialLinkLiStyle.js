@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SocialLinkLi = styled.li`
+const SocialLinkLiStyle = styled.li`
     flex-direction: row;
     display: inline-flex;
     justify-content: center;
@@ -12,4 +12,4 @@ const SocialLinkLi = styled.li`
     color: white;
 `;
 
-export default SocialLinkLi;
+export default SocialLinkLiStyle;

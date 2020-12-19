@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Divider = styled.hr`
+const DividerStyle = styled.hr`
     padding:0;
     margin: 25px 0 0 0;
     width: 1px;
@@ -8,4 +8,4 @@ const Divider = styled.hr`
     border-right: 1px dotted black;
 `;
 
-export default Divider;
+export default DividerStyle;

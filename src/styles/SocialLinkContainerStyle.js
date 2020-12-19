@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SocialLinkContainer = styled.ul`
+const SocialLinkContainerStyle = styled.ul`
     position: fixed;
     width: 25%;
     height: 62px;
@@ -10,4 +10,4 @@ const SocialLinkContainer = styled.ul`
     list-style: none;
 `;
 
-export default SocialLinkContainer;
+export default SocialLinkContainerStyle;

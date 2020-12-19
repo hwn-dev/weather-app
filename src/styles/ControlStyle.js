@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Control = styled.div`
+const ControlStyle = styled.div`
     /* margin: 0 auto; */
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -14,4 +14,4 @@ const Control = styled.div`
 `;
 
 
-export default Control;
+export default ControlStyle;

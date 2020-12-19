@@ -9,17 +9,17 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './styles/HeaderStyle';
 import Heading from './styles/HeadingStyle';
-import Form from './styles/Form';
-import Main from './styles/Main';
-import Control from './styles/Control';
-import ControlButton from './styles/ControlButton';
-import Temp from './styles/Temp';
-import Divider from './styles/Divider';
+import FormStyle from './styles/FormStyle';
+import MainStyle from './styles/MainStyle';
+import ControlStyle from './styles/ControlStyle';
+import ControlButtonStyle from './styles/ControlButtonStyle';
+import TempStyle from './styles/TempStyle';
+import DividerStyle from './styles/DividerStyle';
 import Footer from './styles/FooterStyle';
-import SocialLinkContainer from './styles/SocialLinkContainerStyle';
-import SocialLinkUl from './styles/SocialLinkUl';
-import SocialLinkLi from './styles/SocialLinkLi';
-import SocialButton from './styles/SocialButton';
+import SocialLinkContainerStyle from './styles/SocialLinkContainerStyle';
+import SocialLinkUlStyle from './styles/SocialLinkUlStyle';
+import SocialLinkLiStyle from './styles/SocialLinkLiStyle';
+import SocialButtonStyle from './styles/SocialButtonStyle';
 
 library.add(fab)
 
@@ -36,52 +36,52 @@ class App extends Component {
         <Heading>
           WEATHER
         </Heading>
-          <Form>
+          <FormStyle>
               <input
                 type="text"
                 name="search"
                 placeholder="Search town..."
               />
-          </Form>
-      <Main>
-        <Control>
-          <ControlButton>
+          </FormStyle>
+      <MainStyle>
+        <ControlStyle>
+          <ControlButtonStyle>
             Andover
-          </ControlButton>
-          <ControlButton>
+          </ControlButtonStyle>
+          <ControlButtonStyle>
             Woking
-          </ControlButton>
-          <Temp>
+          </ControlButtonStyle>
+          <TempStyle>
             10&deg;
-          </Temp>
-          <Temp>
+          </TempStyle>
+          <TempStyle>
             20&deg;
-          </Temp>
-        </Control>
-      </Main>
+          </TempStyle>
+        </ControlStyle>
+      </MainStyle>
       <Footer />
-        <SocialLinkContainer>
-            <SocialLinkLi>
-              <SocialButton href="https://www.facebook.com/harryjwneale" target="_blank">
+        <SocialLinkContainerStyle>
+            <SocialLinkLiStyle>
+              <SocialButtonStyle href="https://www.facebook.com/harryjwneale" target="_blank">
                 <FontAwesomeIcon icon={["fab", "facebook"]} />
-              </SocialButton>
-            </SocialLinkLi>
-            <SocialLinkLi>
-              <SocialButton href="https://twitter.com/HWN_Dev" target="_blank">
+              </SocialButtonStyle>
+            </SocialLinkLiStyle>
+            <SocialLinkLiStyle>
+              <SocialButtonStyle href="https://twitter.com/HWN_Dev" target="_blank">
                 <FontAwesomeIcon icon={["fab", "twitter"]} />
-              </SocialButton>
-            </SocialLinkLi>
-            <SocialLinkLi>
-              <SocialButton href="https://www.linkedin.com/in/harry-neale-092976125/" target="_blank">
+              </SocialButtonStyle>
+            </SocialLinkLiStyle>
+            <SocialLinkLiStyle>
+              <SocialButtonStyle href="https://www.linkedin.com/in/harry-neale-092976125/" target="_blank">
                 <FontAwesomeIcon icon={["fab", "linkedin"]} />
-              </SocialButton>
-            </SocialLinkLi>
-            <SocialLinkLi>
-              <SocialButton href="https://github.com/hwn-dev" target="_blank">
+              </SocialButtonStyle>
+            </SocialLinkLiStyle>
+            <SocialLinkLiStyle>
+              <SocialButtonStyle href="https://github.com/hwn-dev" target="_blank">
                 <FontAwesomeIcon icon={["fab", "github"]} />
-              </SocialButton>
-            </SocialLinkLi>
-        </SocialLinkContainer>
+              </SocialButtonStyle>
+            </SocialLinkLiStyle>
+        </SocialLinkContainerStyle>
     </AppWrapper>
     );
   }
