@@ -25,7 +25,6 @@ class App2 extends Component {
             <div>
                 <AppWrapper>
                     <Header />
-                    {/* <Form /> */}
                     <Main />
                     <Footer />
                 </AppWrapper>

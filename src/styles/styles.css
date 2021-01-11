@@ -6,10 +6,14 @@
   }
   
   body {
-    background-color: #F7F7F2;
+    /* background-color: #F7F7F2; */
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
+
+button {
+
+}
 
 .appWrapper {
   width: 100vw;
@@ -82,12 +86,14 @@
     margin-top: 125px;
     width: 100%;
     height: 100%;
-    background-color: #D5D5D5;
+    background: url('../img/bg-img.jpg');
+    background-size: cover;
+    background-position: bottom;
     position: fixed;
 }
 
 .control-button {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 43%;
     display: flex;
     justify-content: center;
@@ -101,6 +107,7 @@
     color: white;
     padding: 1rem;
     border: 1px groove white;
+    border-radius: 5px;
 }
 
 .footer {
@@ -109,4 +116,39 @@
   background-color: #01161E;
   position: fixed;
   border-top: 5px solid #598392;
+}
+
+.social-container {
+  width: 75%;
+  height: 50px;
+  position: fixed;
+  list-style: none;
+}
+
+.social-container ul {
+  list-style: none;
+}
+
+.social-container ul li {
+  display: inline-flex;
+  margin: 0 5% 15px 0;
+  position: relative;
+}
+
+.social-container button {
+  margin: 10px auto;
+  outline: none;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;  
+  font-size: 1.8rem;
+  color: white;
+}
+
+.social-container button:hover {
+  background-color: orange;
+  border-radius: 20px;
+  color: white;
 }
