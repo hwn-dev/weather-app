@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Emilys+Candy&display=swap');
+
+* {
+    box-sizing: border-box;
+    color: #333;
+  }
+  
+  body {
+    background-color: #F7F7F2;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+.appWrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-container { 
+  width:100vw;
+  height:125px;
+  position:fixed;
+  border-bottom: 5px solid #598392;
+  background-color:#01161E;
+}
+
+#header {
+  height:125px;
+  border-bottom: 5px solid #598392;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "left right";
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#header form {
+  grid-area: right;
+  text-align: center;
+}
+
+.heading {
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Emilys Candy', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  grid-area: left;
+  text-align: center;
+}
+
+.search-form {
+  background-color: #F7F7F2;
+  padding: 5px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  background: #eee;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 600;
+  grid-area: right;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  justify-content: center;
+  align-items: center;
+  background-color: #F7F7F2;
+  height: 90%;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.control {
+    margin: 0 auto;
+    margin-top: 125px;
+    width: 100%;
+    height: 100%;
+    background-color: #D5D5D5;
+    position: fixed;
+}
+
+.control-button {
+    margin-top: 10px;
+    margin-left: 43%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:20%;
+    height: 50px;
+    background-color:#249fd0;
+    font-family: Optima;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    border: 1px groove white;
+}
+
+.footer {
+  width: 100vw;
+  height: 100%;
+  background-color: #01161E;
+  position: fixed;
+  border-top: 5px solid #598392;
+}

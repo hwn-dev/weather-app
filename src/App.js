@@ -11,8 +11,8 @@ import Header from './styles/HeaderStyle';
 import Heading from './styles/HeadingStyle';
 import FormStyle from './styles/FormStyle';
 import MainStyle from './styles/MainStyle';
-import ControlStyle from './styles/ControlStyle';
-import ControlButtonStyle from './styles/ControlButtonStyle';
+import Control from './components/Control';
+import ControlButton from './components/ControlButton'
 import TempStyle from './styles/TempStyle';
 import DividerStyle from './styles/DividerStyle';
 import Footer from './styles/FooterStyle';
@@ -44,20 +44,16 @@ class App extends Component {
               />
           </FormStyle>
       <MainStyle>
-        <ControlStyle>
-          <ControlButtonStyle>
-            Andover
-          </ControlButtonStyle>
-          <ControlButtonStyle>
-            Woking
-          </ControlButtonStyle>
+        <Control className="control">
+          <ControlButton />
+          <ControlButton />
           <TempStyle>
             10&deg;
           </TempStyle>
           <TempStyle>
             20&deg;
           </TempStyle>
-        </ControlStyle>
+        </Control>
       </MainStyle>
       <Footer />
         <SocialLinkContainerStyle>
