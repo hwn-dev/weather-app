@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const Button = () => {
-    return (
-        <button className="control-button">
-            Hello
-        </button>
-    )    
+function Button() {
+  const [count, setCount] = useState(4);
+  function changeCount() {
+    setCount(count - 1);
+  }
+  return (
+    <button className="control-button" onClick={changeCount}>
+      {count}
+    </button>
+  );
 }
 
 export default Button;

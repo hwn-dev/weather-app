@@ -81,16 +81,16 @@ body {
 }
 
 .main {
-  justify-content: center;
+  /* justify-content: center;
   align-items: center;
-  background-color: #f7f7f2;
+  background-color: #f7f7f2; */
   height: 90%;
-  width: 100vw;
-  margin: 0 auto;
+  /* width: 100vw;
+  margin: 0 auto; */
 }
 
 .control {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 125px;
   width: 100%;
   height: 100%;
@@ -111,18 +111,15 @@ body {
   background-color: #249fd0;
   font-family: Optima;
   font-size: 2rem;
-  text-align: center;
+  /* text-align: center; */
   color: white;
-  padding: 1rem;
+  /* padding: 1rem; */
   border: 1px groove white;
   border-radius: 5px;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr 3fr 3fr;
-  grid-template-areas: "left right";
+  display: flex;
   box-shadow: 10px 10px 8px rgb(63, 63, 63);
   border-radius: 5px;
   align-items: center;
@@ -133,6 +130,38 @@ body {
   background-color: #bbfffc;
   opacity: 90%;
 }
+
+.card-one {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+.card-two {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+/* #card-one-title {
+  grid-area: left-top;
+}
+
+#card-one-max {
+  grid-area: left-max;
+}
+
+#card-one-min {
+  grid-area: left-min;
+} */
 
 .cards h1 {
   font-family: "Bebas Neue", cursive;
