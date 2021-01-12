@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./styles/styles.css";
 

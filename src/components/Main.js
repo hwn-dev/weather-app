@@ -9,13 +9,25 @@ const Main = () => {
         <div className="cards">
           <div className="card-one">
             <h1>Manhattan, NY</h1>
-            <h2>Max temp</h2>
-            <h2>Min temp</h2>
+            <span className="temp">
+              10<span className="metric">&#8451;</span>
+              <p>Max temp</p>
+            </span>
+            <span className="temp">
+              10<span className="metric">&#8451;</span>
+              <p>Min temp</p>
+            </span>
           </div>
           <div className="card-two">
             <h1>Scooba, MS</h1>
-            <h2>Max temp</h2>
-            <h2>Min temp</h2>
+            <span className="temp">
+              10<span className="metric">&#8451;</span>
+              <p>Max temp</p>
+            </span>
+            <span className="temp">
+              10<span className="metric">&#8451;</span>
+              <p>Min temp</p>
+            </span>
           </div>
         </div>
       </div>
