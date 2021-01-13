@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [location, setLocation] = useState("");
+  const [country, setCountry] = useState("");
+  const [temp, setTemp] = useState("");
+  const [details, setDetails] = useState({});
 
   const api = {
     key: "4e48b51081eb15cffe3586dba85c9297",
@@ -11,11 +14,21 @@ const Form = () => {
   function getWeather() {
     fetch(`${api.base}${api.key}&query=${location}`)
       .then(function (response) {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
       })
       .then(function (response) {
-        console.log(response.current.temperature);
-        console.log(response.location.country);
+        setLocation(response.location.name);
+        setCountry(response.location.country);
+        setTemp(response.current.temperature);
+      })
+      .then(function (response) {
+        setDetails({ location, country, temp });
+        console.log(details);
+      })
+      .catch(err => {
+        alert("Error: could not find city. Please try again");
       });
   }
 
@@ -25,6 +38,7 @@ const Form = () => {
   }
 
   function handleChange(e) {
+    e.preventDefault();
     setLocation(e.target.value);
   }
 
@@ -36,15 +50,13 @@ const Form = () => {
             className="search-form"
             type="text"
             name="search"
-            autoCorrect="off"
-            value={location}
             placeholder="Search..."
             onChange={handleChange}
           ></input>
         </form>
       </div>
       <div className="cards">
-        <h1>{location}</h1>
+        <h1>{details.location}</h1>
         <span className="temp">
           {}
           <span className="metric"></span>

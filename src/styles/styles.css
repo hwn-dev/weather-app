@@ -30,7 +30,6 @@ body {
   position: absolute;
   border-bottom: 5px solid #598392;
   background-color: #01161e;
-  box-sizing: border-box;
   color: #fff;
   font-family: ikaros;
 }
@@ -52,23 +51,13 @@ body {
   font-family: ikaros;
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
-  background: #eee;
   font-size: 1.2rem;
-  line-height: 1.5;
-  font-weight: 600;
-  grid-area: right;
-  justify-content: center;
-  align-items: center;
 }
 
 #output {
   display: flex;
   justify-content: center;
   color: white;
-}
-
-.main {
-  height: 90%;
 }
 
 .control {
