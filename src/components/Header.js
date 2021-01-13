@@ -1,13 +1,9 @@
 import React from "react";
-import Form from "./Form";
 
 const Header = () => {
   return (
-    <div className="header-container">
-      <div id="header">
-        <h1 className="heading">WEATHER APP</h1>
-        <Form />
-      </div>
+    <div className="header">
+      <h1>WEATHER APP</h1>
     </div>
   );
 };

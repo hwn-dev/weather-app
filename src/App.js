@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
@@ -11,20 +10,13 @@ import Footer from "./components/Footer";
 
 library.add(fab);
 
-const AppWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
-
 class App extends Component {
   render() {
     return (
-      <div>
-        <AppWrapper>
-          <Header />
-          <Main />
-          <Footer />
-        </AppWrapper>
+      <div className="wrapper">
+        <Header />
+        <Main />
+        <Footer />
       </div>
     );
   }

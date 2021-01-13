@@ -24,50 +24,31 @@ body {
   height: 100vh;
 }
 
-.header-container {
+.header {
   width: 100vw;
-  height: 125px;
-  position: fixed;
+  height: 80px;
+  position: absolute;
   border-bottom: 5px solid #598392;
   background-color: #01161e;
-}
-
-#header {
-  height: 125px;
-  border-bottom: 5px solid #598392;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "left right";
-  width: 85%;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-#header form {
-  grid-area: right;
-  text-align: center;
-}
-
-.heading {
   box-sizing: border-box;
   color: #fff;
-  font-family: "Emilys Candy", cursive;
-  font-family: "Overpass", sans-serif;
-  font-family: audrey;
   font-family: ikaros;
-  font-size: 2.5rem;
-  font-weight: 700;
-  /* letter-spacing: -0.3rem; */
-  grid-area: left;
-  text-align: center;
+}
+
+.header h1 {
+  margin-left: 30px;
+}
+
+.search-bar {
+  display: grid;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .search-form {
   background-color: #f7f7f2;
   padding: 10px;
   width: 250px;
-  font-family: "Overpass", sans-serif;
   font-family: ikaros;
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
@@ -80,22 +61,18 @@ body {
   align-items: center;
 }
 
-.search-form input {
-  color: blue;
+#output {
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
 .main {
-  /* justify-content: center;
-  align-items: center;
-  background-color: #f7f7f2; */
   height: 90%;
-  /* width: 100vw;
-  margin: 0 auto; */
 }
 
 .control {
-  /* margin: 0 auto; */
-  margin-top: 125px;
+  margin-top: 80px;
   width: 100%;
   height: 100%;
   background: url("../img/bg-img.jpg");
@@ -115,15 +92,15 @@ body {
   background-color: #249fd0;
   font-family: Optima;
   font-size: 2rem;
-  /* text-align: center; */
   color: white;
-  /* padding: 1rem; */
   border: 1px groove white;
   border-radius: 5px;
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
   box-shadow: 10px 10px 8px rgb(63, 63, 63);
   border-radius: 5px;
   align-items: center;
@@ -147,7 +124,7 @@ body {
 
 .temp {
   font-family: "Bebas Neue", cursive;
-  font-size: 7rem;
+  font-size: 10rem;
 }
 
 .temp p {
@@ -163,29 +140,12 @@ body {
   margin-bottom: 20px;
 }
 
-.card-one {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  justify-content: start;
-  align-items: center;
-  height: 100%;
-  width: 50%;
-}
-
-.card-two {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-  width: 50%;
-}
-
 .footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 850px;
   width: 100vw;
-  height: 100%;
+  height: 100px;
   background-color: #01161e;
   position: fixed;
   border-top: 1px solid #598392;
