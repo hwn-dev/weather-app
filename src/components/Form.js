@@ -8,23 +8,20 @@ const Form = () => {
     base: "http://api.weatherstack.com/current?access_key=",
   };
 
-  const labels = ["Max temp", "Min temp"];
-
-  const degrees = ["&deg;"];
-
-  function GetWeather() {
-    fetch(`${api.base}${api.key}&query=${Form.location}`)
+  function getWeather() {
+    fetch(`${api.base}${api.key}&query=${location}`)
       .then(function (response) {
         return response.json();
       })
       .then(function (response) {
-        console.log(response.temperature);
+        console.log(response.current.temperature);
+        console.log(response.location.country);
       });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    GetWeather();
+    getWeather();
   }
 
   function handleChange(e) {
