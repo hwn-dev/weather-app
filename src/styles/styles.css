@@ -89,14 +89,14 @@ body {
 .cards {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 200px 225px 225px;
   box-shadow: 10px 10px 8px rgb(63, 63, 63);
   border-radius: 5px;
   align-items: center;
   margin: 25px auto;
   text-align: center;
   width: 80vw;
-  height: 60vh;
+  height: 650px;
   background-color: #bbfffc;
   opacity: 90%;
 }
@@ -108,7 +108,7 @@ body {
 
 .cards p {
   font-family: audrey-oblique;
-  letter-spacing: -0.1rem;
+  font-size: 1rem;
 }
 
 .temp {
@@ -127,6 +127,7 @@ body {
   font-style: oblique;
   font-size: 1.3rem;
   margin-bottom: 20px;
+  letter-spacing: 0rem;
 }
 
 .footer {

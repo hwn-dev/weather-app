@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [location, setLocation] = useState("");
-  const [country, setCountry] = useState("");
-  const [temp, setTemp] = useState("");
+  const [location, setLocation] = useState({});
   const [details, setDetails] = useState({});
 
   const api = {
@@ -11,25 +9,17 @@ const Form = () => {
     base: "http://api.weatherstack.com/current?access_key=",
   };
 
-  function getWeather() {
-    fetch(`${api.base}${api.key}&query=${location}`)
-      .then(function (response) {
-        if (response.ok) {
-          return response.json();
-        }
-      })
-      .then(function (response) {
-        setLocation(response.location.name);
-        setCountry(response.location.country);
-        setTemp(response.current.temperature);
-      })
-      .then(function (response) {
-        setDetails({ location, country, temp });
-        console.log(details);
-      })
-      .catch(err => {
-        alert("Error: could not find city. Please try again");
-      });
+  async function getWeather() {
+    try {
+      const response = await fetch(
+        `${api.base}${api.key}&query=${location}`,
+      ).then(response => response.json());
+      console.log({ response });
+      setLocation(response.location);
+      setDetails(response.current);
+    } catch (err) {
+      alert("Error: could not find city. Please try again");
+    }
   }
 
   function handleSubmit(e) {
@@ -56,17 +46,24 @@ const Form = () => {
         </form>
       </div>
       <div className="cards">
-        <h1>{details.location}</h1>
-        <span className="temp">
+        <h1>
+          {location.name}, {location.country}
+        </h1>
+        <h1 className="temp">{details.temperature}</h1>
+        <p className="metric">
+          {`Feels Like ${details.feelslike}` || `You didn't choose a location`}
+        </p>
+        <p>placeholder</p>
+        {/* <span className="temp">
           {}
           <span className="metric"></span>
-          <p>placeholder</p>
-        </span>
-        <span className="temp">
-          {}
-          <span className="metric"></span>
-          <p>placeholder</p>
-        </span>
+
+        // </span>
+        // <span className="temp">
+        //   {}
+        //   <span className="metric"></span>
+        //   <p>placeholder</p>
+  // </span> */}
       </div>
     </div>
   );
