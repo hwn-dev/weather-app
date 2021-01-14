@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Result from "./Result";
 
 const Form = () => {
   const [location, setLocation] = useState({});
@@ -21,6 +22,15 @@ const Form = () => {
       alert("Error: could not find city. Please try again");
     }
   }
+
+  // function displayPlace() {
+  //   let title;
+  //   if (!location.name) {
+  //     title = null;
+  //   } else {
+  //     title = <h1>{location.name}</h1>;
+  //   }
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -46,24 +56,11 @@ const Form = () => {
         </form>
       </div>
       <div className="cards">
-        <h1>
-          {location.name}, {location.country}
-        </h1>
-        <h1 className="temp">{details.temperature}</h1>
+        <h1>{location.name}</h1>
+        <h1 className="temp">{details.temperature}°</h1>
         <p className="metric">
           {`Feels Like ${details.feelslike}` || `You didn't choose a location`}
         </p>
-        <p>placeholder</p>
-        {/* <span className="temp">
-          {}
-          <span className="metric"></span>
-
-        // </span>
-        // <span className="temp">
-        //   {}
-        //   <span className="metric"></span>
-        //   <p>placeholder</p>
-  // </span> */}
       </div>
     </div>
   );
