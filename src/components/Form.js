@@ -47,6 +47,7 @@ const Form = () => {
       <div className="search-bar">
         <form onSubmit={handleSubmit}>
           <input
+            autoComplete="off"
             className="search-form"
             type="text"
             name="search"
@@ -56,11 +57,14 @@ const Form = () => {
         </form>
       </div>
       <div className="cards">
-        <h1>{location.name}</h1>
-        <h1 className="temp">{details.temperature}°</h1>
-        <p className="metric">
-          {`Feels Like ${details.feelslike}` || `You didn't choose a location`}
-        </p>
+        <Result
+          place={location.name}
+          icon={details.weather_icons}
+          temperature={details.temperature}
+          desc={details.weather_descriptions}
+          time={location.localtime}
+          feel={details.feelslike}
+        />
       </div>
     </div>
   );
