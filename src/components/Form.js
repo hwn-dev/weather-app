@@ -23,15 +23,6 @@ const Form = () => {
     }
   }
 
-  // function displayPlace() {
-  //   let title;
-  //   if (!location.name) {
-  //     title = null;
-  //   } else {
-  //     title = <h1>{location.name}</h1>;
-  //   }
-  // }
-
   function handleSubmit(e) {
     e.preventDefault();
     getWeather();
@@ -59,10 +50,11 @@ const Form = () => {
       <div className="cards">
         <Result
           place={location.name}
+          country={location.country}
           icon={details.weather_icons}
           temperature={details.temperature}
           desc={details.weather_descriptions}
-          time={location.localtime}
+          time={details.observation_time}
           feel={details.feelslike}
         />
       </div>
