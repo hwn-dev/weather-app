@@ -22,7 +22,9 @@ export default function Weather({
         </div>
         <div className="location-info">
           <div className="place">
-            <h1>{place}</h1>
+            <h1>
+              {place} {country}
+            </h1>
           </div>
           <div className="time">
             <h3>{time}</h3>
@@ -31,10 +33,12 @@ export default function Weather({
       </div>
       <div className="results-bottom">
         <div className="current-temp">
-          <h3>{temperature}</h3>
+          <h3>{temperature}&deg;</h3>
+          <h6>Current Temperature</h6>
         </div>
         <div className="feel-temp">
-          <h3>{feel}</h3>
+          <h3>{feel}&deg;</h3>
+          <h6>Feels Like</h6>
         </div>
       </div>
     </div>
