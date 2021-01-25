@@ -1,67 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Result from "./Result";
 
 const Form = () => {
   const [location, setLocation] = useState({});
   const [details, setDetails] = useState({});
 
-  const wsApi = {
-    wsKey: "4e48b51081eb15cffe3586dba85c9297",
-    wsBase: "http://api.weatherstack.com/current?access_key=",
-  };
-
   const owmApi = {
-    owmkey: "d183d3f17b1271cf5a25030167a7e4e2",
+    owmKey: process.env.REACT_APP_APIKEY,
     owmBase: "https://api.openweathermap.org/data/2.5/weather?q=",
   };
 
   // OPENWEATHERMAP API CALL
-  // async function getWeather() {
-  //   try {
-  //     const response = await fetch(
-  //       `${owmApi.owmBase}${location}&appid=${owmApi.owmKey}&units=metric`,
-  //       ).then(response => response.json());
-  //       console.log({ response });
-  //       setDetails(response);
-  //     } catch (err) {
-  //       alert("Error: could not find city. Please try again");
-  //     }
-  //   }
-
-  // WEATHERSTACK API CALL
   async function getWeather() {
     try {
+      let apiResponse;
       const response = await fetch(
-        `${wsApi.wsBase}${wsApi.wsKey}&query=${location}`,
+        `${owmApi.owmBase}${location}&appid=${owmApi.owmKey}&units=metric`,
       ).then(response => response.json());
-      console.log({ response });
-      setLocation(response.location);
-      setDetails(response.current);
+      // console.log({ response });
+      apiResponse = {
+        city: response.name,
+        country: response.sys.country,
+        temp: Math.round(response.main.temp),
+        maxTemp: Math.round(response.main.temp_max),
+        minTemp: Math.round(response.main.temp_min),
+        feelsLike: Math.round(response.main.feels_like),
+        humidity: Math.round(response.main.humidity),
+        description: response.weather[0].main,
+        windSpeed: response.wind.speed,
+        windDirection: response.wind.deg,
+        sunrise: new Intl.DateTimeFormat("en-GB", {
+          timeStyle: "short",
+        }).format(response.sys.sunrise * 1000),
+        sunset: new Intl.DateTimeFormat("en-GB", {
+          timeStyle: "short",
+        }).format(response.sys.sunset * 1000),
+      };
+      setDetails(apiResponse);
+      console.log(details);
     } catch (err) {
-      alert("Error: could not find city. Please try again");
+      alert(err);
     }
-  }
-
-  function getDesc() {
-    const weatherDescription = details.weather_descriptions[0];
-    let array;
-    if (weatherDescription.includes(",")) {
-      array = weatherDescription.split(",");
-      console.log(array[0]);
-    } else {
-      console.log(weatherDescription);
-    }
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    getWeather();
-    getDesc();
   }
 
   function handleChange(e) {
     e.preventDefault();
     setLocation(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    getWeather();
   }
 
   return (
@@ -80,22 +69,12 @@ const Form = () => {
       </div>
       <div className="cards">
         <Result
-        // OPENWEATHERMAP
-        // place={details.name}
-        // country={details.sys.country}
-        // icon={details.weather[0].icon}
-        // temperature={details.main.temp}
-        // desc={details.weather[0].description}
-        // feel={details.main.feels_like}
-
-        // WEATHERSTACK
-        // place={location.name}
-        // country={}
-        // icon={}
-        // temperature={}
-        // desc={}
-        // time={}
-        // feel={}
+          place={details.city}
+          country={details.country}
+          // icon={details.weather[0].icon}
+          temperature={details.temp}
+          desc={details.description}
+          feel={details.feelsLike}
         />
       </div>
     </div>
