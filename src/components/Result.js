@@ -1,3 +1,16 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCloud,
+  faBolt,
+  faWind,
+  faSun,
+  faCloudSun,
+  faCloudShowersHeavy,
+  faCloudRain,
+  faSnowflake,
+  faMoon,
+  faSmog,
+} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 export default function Weather({
@@ -5,19 +18,46 @@ export default function Weather({
   country,
   temperature,
   desc,
-  icon,
   time,
   feel,
 }) {
+  let weatherIcon = null;
+  if (desc === "Clouds") {
+    weatherIcon = <FontAwesomeIcon icon={faCloud} />;
+  } else if (desc === "Clear") {
+    weatherIcon = <FontAwesomeIcon icon={faSun} />;
+  } else if (desc === "Thunderstorm") {
+    weatherIcon = <FontAwesomeIcon icon={faBolt} />;
+  } else if (desc === "Drizzle") {
+    weatherIcon = <FontAwesomeIcon icon={faCloudRain} />;
+  } else if (desc === "Rain") {
+    weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} />;
+  } else if (desc === "Snow") {
+    weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
+  } else if (
+    desc === "Haze" ||
+    desc === "Mist" ||
+    desc === "Smoke" ||
+    desc === "Dust" ||
+    desc === "Fog" ||
+    desc === "Sand" ||
+    desc === "Ash"
+  ) {
+    weatherIcon = <FontAwesomeIcon icon={faSmog} />;
+  } else if (desc === "Squall" || desc === "Tornado") {
+    weatherIcon = <FontAwesomeIcon icon={faWind} />;
+  } else {
+    weatherIcon = null;
+  }
   return (
     <div className="result-container">
       <div className="results-top">
         <div className="visual">
           <div className="icon">
-            <img src={icon} alt="Weather icon" />
-          </div>
-          <div className="desc">
-            <h3>{desc}</h3>
+            <span>{weatherIcon}</span>
+            <span>
+              <h3>{desc}</h3>
+            </span>
           </div>
         </div>
         <div className="location-info">

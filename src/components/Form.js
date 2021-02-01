@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Result from "./Result";
 
 const Form = () => {
@@ -71,7 +71,6 @@ const Form = () => {
         <Result
           place={details.city}
           country={details.country}
-          // icon={details.weather[0].icon}
           temperature={details.temp}
           desc={details.description}
           feel={details.feelsLike}

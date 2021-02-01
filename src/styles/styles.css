@@ -139,29 +139,39 @@ body {
 
 .icon {
   display: flex;
+  flex-direction: column;
   flex: 2;
-  height: 80%;
-  /* text-align: right; */
+  height: 100%;
+  margin: 100px 0 auto auto;
 }
 
-.icon img {
-  width: 50%;
+.icon span {
+  width: 100%;
   border-radius: 5px;
-  /* display: inline-block; */
-  margin: auto 0 0 auto;
+  font-family: ikaros;
+  text-align: right;
 }
 
-.desc {
+.icon span h3 {
+  font-family: ikaros;
+  font-size: 1rem;
+}
+
+.icon span svg {
+  font-size: 5rem;
+}
+
+/* .desc {
   margin: auto 0 0 auto;
   width: 70%;
   text-align: right;
 }
 
 .desc h3 {
-  /* white-space: nowrap; */
+  white-space: nowrap;
   font-family: ikaros;
   font-size: 1rem;
-}
+} */
 
 .location-info {
   height: 100%;
