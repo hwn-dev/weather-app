@@ -17,7 +17,6 @@ const Form = () => {
       const response = await fetch(
         `${owmApi.owmBase}${location}&appid=${owmApi.owmKey}&units=metric`,
       ).then(response => response.json());
-      // console.log({ response });
       apiResponse = {
         city: response.name,
         country: response.sys.country,
@@ -37,7 +36,7 @@ const Form = () => {
         }).format(response.sys.sunset * 1000),
       };
       setDetails(apiResponse);
-      console.log(details);
+      console.log(apiResponse);
     } catch (err) {
       alert(err);
     }
@@ -73,7 +72,13 @@ const Form = () => {
           country={details.country}
           temperature={details.temp}
           desc={details.description}
-          feel={details.feelsLike}
+          feelsLike={details.feelsLike}
+          maxTemp={details.maxTemp}
+          minTemp={details.minTemp}
+          windSpeed={details.windSpeed}
+          windDirection={details.windDirection}
+          sunRise={details.sunrise}
+          sunSet={details.sunset}
         />
       </div>
     </div>

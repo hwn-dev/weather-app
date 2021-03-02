@@ -5,6 +5,7 @@
   font-family: ikaros;
   src: url(../fonts/Ikaros\ Sans/Ikaros Regular.otf);
 }
+
 @font-face {
   font-family: audrey-oblique;
   src: url(../fonts/Audrey/Audrey-NormalOblique.otf);
@@ -87,12 +88,8 @@ body {
 }
 
 .cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   box-shadow: 10px 10px 8px rgb(63, 63, 63);
   border-radius: 5px;
-  align-items: center;
   margin: 25px auto;
   text-align: center;
   width: 55vw;
@@ -112,48 +109,31 @@ body {
 }
 
 .result-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  grid-template-columns: 1fr 2fr;
   height: 100%;
   width: 100%;
 }
 
 .results-top {
-  /* border: 1px solid #000; */
+  border-bottom: 1px solid #000;
   display: flex;
-  align-items: flex-end;
-  height: 35%;
-  /* margin-top: -320px; */
 }
 
 .visual {
-  width: 40%;
-  height: 100%;
-  display: flex;
   flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
 }
 
 .icon {
   display: flex;
   flex-direction: column;
-  flex: 2;
-  height: 100%;
-  margin: 100px 0 auto auto;
+  margin: 90px 0 auto auto;
 }
 
 .icon span {
-  width: 100%;
-  border-radius: 5px;
-  font-family: ikaros;
   text-align: right;
 }
 
 .icon span h3 {
-  font-family: ikaros;
   font-size: 1rem;
 }
 
@@ -161,8 +141,8 @@ body {
   font-size: 5rem;
 }
 
-/* .desc {
-  margin: auto 0 0 auto;
+.desc {
+  margin: -5px 0 0 50px;
   width: 70%;
   text-align: right;
 }
@@ -171,58 +151,49 @@ body {
   white-space: nowrap;
   font-family: ikaros;
   font-size: 1rem;
-} */
+}
 
 .location-info {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 2;
-  margin: 0 auto;
 }
 
 .place {
-  margin: 100px auto 0 auto;
-  text-align: right;
+  margin: 100px 50px 0 auto;
 }
 
 .place h1 {
   margin: 0;
-  padding: 0;
 }
 
 .time {
-  text-align: right;
-  margin: -30px 50px 0 0;
+  margin: -30px 50px 0 auto;
   font-size: 1rem;
 }
 
 .results-bottom {
-  border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 65%;
 }
 
-.current-temp,
-.feel-temp {
+.temperatures,
+.wind,
+.sun-times {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
-.current-temp h3,
-.feel-temp h3 {
+.results.bottom h3 {
   margin: 0;
   font-family: "Bebas Neue", cursive;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
-.current-temp h6,
-.feel-temp h6 {
+.results.bottom h6 {
   margin: 0;
   font-family: ikaros;
   margin-bottom: 20px;
@@ -233,8 +204,6 @@ body {
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
   margin-top: 850px;
   width: 100vw;
   height: 100px;
@@ -252,6 +221,7 @@ body {
 
 .social-container ul {
   list-style: none;
+  margin: 5px;
 }
 
 .social-container ul li {
