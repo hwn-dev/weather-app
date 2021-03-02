@@ -145,12 +145,13 @@ body {
   margin: -5px 0 0 50px;
   width: 70%;
   text-align: right;
-}
-
-.desc h3 {
   white-space: nowrap;
   font-family: ikaros;
   font-size: 1rem;
+}
+
+.desc h3 {
+  margin: 5px;
 }
 
 .location-info {
@@ -168,9 +169,10 @@ body {
   margin: 0;
 }
 
-.time {
+.today {
   margin: -30px 50px 0 auto;
-  font-size: 1rem;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
 }
 
 .results-bottom {
@@ -197,6 +199,10 @@ body {
   margin: 0;
   font-family: ikaros;
   margin-bottom: 20px;
+}
+
+.results-bottom span {
+  font-size: 0.5rem;
 }
 
 .weather-results {

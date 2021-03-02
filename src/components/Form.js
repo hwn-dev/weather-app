@@ -20,6 +20,7 @@ const Form = () => {
       apiResponse = {
         city: response.name,
         country: response.sys.country,
+        timezone: response.timezone,
         temp: Math.round(response.main.temp),
         maxTemp: Math.round(response.main.temp_max),
         minTemp: Math.round(response.main.temp_min),
@@ -79,6 +80,7 @@ const Form = () => {
           windDirection={details.windDirection}
           sunRise={details.sunrise}
           sunSet={details.sunset}
+          timezone={details.timezone}
         />
       </div>
     </div>

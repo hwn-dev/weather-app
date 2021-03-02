@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloud,
@@ -10,7 +11,7 @@ import {
   faSnowflake,
   faSmog,
 } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import Date from "./Date";
 
 export default function Weather({
   place,
@@ -24,6 +25,7 @@ export default function Weather({
   sunRise,
   sunSet,
   desc,
+  timezone,
 }) {
   let weatherIcon = null;
   if (desc === "Clouds") {
@@ -53,8 +55,6 @@ export default function Weather({
   } else {
     weatherIcon = null;
   }
-  let date = new Date();
-  let today = date.toDateString();
   return (
     <div className="result-container">
       <div className="results-top">
@@ -72,8 +72,10 @@ export default function Weather({
               {place}, {country}
             </h1>
           </div>
-          <div className="time">
-            <h3>{today}</h3>
+          <div className="today">
+            <h3>
+              <Date timezone={timezone} />
+            </h3>
           </div>
         </div>
       </div>
@@ -98,7 +100,10 @@ export default function Weather({
         </div>
         <div className="wind">
           <div className="wind-speed">
-            <h3>{windSpeed}mps</h3>
+            <h3>
+              {windSpeed}
+              <span>mps</span>
+            </h3>
             <h6>Wind Speed</h6>
           </div>
           <div className="wind-direction">
