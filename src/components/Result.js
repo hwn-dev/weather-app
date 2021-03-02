@@ -10,6 +10,7 @@ import {
   faCloudRain,
   faSnowflake,
   faSmog,
+  faChevronCircleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import Date from "./Date";
 
@@ -81,19 +82,19 @@ export default function Weather({
       </div>
       <div className="results-bottom">
         <div className="temperatures">
-          <div className="current-temp">
+          <div>
             <h3>{temperature}&deg;</h3>
             <h6>Current Temperature</h6>
           </div>
-          <div className="feel-temp">
+          <div>
             <h3>{feelsLike}&deg;</h3>
             <h6>Feels Like</h6>
           </div>
-          <div className="max-temp">
+          <div>
             <h3>{maxTemp}&deg;</h3>
             <h6>Max Temperature</h6>
           </div>
-          <div className="min-temp">
+          <div>
             <h3>{minTemp}&deg;</h3>
             <h6>Min Temperature</h6>
           </div>
@@ -107,7 +108,10 @@ export default function Weather({
             <h6>Wind Speed</h6>
           </div>
           <div className="wind-direction">
-            <h3>{windDirection}&deg;</h3>
+            <h3>
+              <FontAwesomeIcon icon={faChevronCircleUp} />
+              {windDirection}&deg;
+            </h3>
             <h6>Wind Direction</h6>
           </div>
         </div>

@@ -36,20 +36,14 @@ export default function getDate({ timezone }) {
   if (timeDiffMins % 60 === 0 || timeDiffMins % -60 === 0) {
     timeDiffHrs = timeDiffMins / 60;
     hours += timeDiffHrs;
-    if (hours > 24 ? (hours -= 24) : hours);
+    if (hours > 24 ? (hours -= 24) && currentDate.setDate(date + 1) : hours);
   }
 
   let offsetHrs = hours + timeDiffMins;
   console.log(timezone, timeDiffMins, timeDiffHrs, offsetHrs);
 
-  // let offsetHrs = hours + timeDiffHrs;
-
-  // let mins = currentDate.getMinutes();
-
-  // if (timezone !== 0) ? todaysDate = `${day} ${date} ${month}, ${hours}:${mins}` :
-  //   todaysDate = `${day} ${date} ${month}, ${offsetHrs}:${mins}`
-
   const todaysDate = `${day} ${date} ${month}, ${hours}:${mins}`;
+  console.log(todaysDate);
 
   return todaysDate;
 }
