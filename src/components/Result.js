@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloud,
@@ -12,6 +12,8 @@ import {
   faSmog,
   faChevronCircleUp,
 } from "@fortawesome/free-solid-svg-icons";
+import { gsap } from "gsap";
+
 import Date from "./Date";
 
 export default function Weather({
@@ -56,6 +58,23 @@ export default function Weather({
   } else {
     weatherIcon = null;
   }
+
+  // useEffect(() => {
+  //   gsap.from(".results-top", {
+  //     duration: 1,
+  //     x: "25%",
+  //     opacity: 0,
+  //     ease: "sine",
+  //     delay: 1,
+  //   });
+  //   gsap.from(".results-bottom", {
+  //     duration: 1,
+  //     x: "-25%",
+  //     opacity: 0,
+  //     ease: "sine",
+  //     delay: 2,
+  //   });
+  // });
 
   return (
     <div className="result-container">

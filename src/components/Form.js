@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+
 import Result from "./Result";
 
 const Form = () => {
@@ -52,6 +54,29 @@ const Form = () => {
     e.preventDefault();
     getWeather();
   }
+
+  useEffect(() => {
+    gsap.from(".cards", {
+      duration: 0.5,
+      y: "25%",
+      opacity: 0,
+      ease: "sine",
+    });
+    gsap.from(".results-top", {
+      duration: 1,
+      x: "25%",
+      opacity: 0,
+      ease: "sine",
+      delay: 0.5,
+    });
+    gsap.from(".results-bottom", {
+      duration: 1,
+      x: "-25%",
+      opacity: 0,
+      ease: "sine",
+      delay: 0.9,
+    });
+  }, []);
 
   return (
     <div>

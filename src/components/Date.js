@@ -42,7 +42,6 @@ export default function today({ timezone }) {
   let offsetHrs = hours + timeDiffMins;
 
   const todaysDate = `${day} ${date} ${month}, ${hours}:${mins}`;
-  console.log(currentDate, day);
 
   return todaysDate;
 }
