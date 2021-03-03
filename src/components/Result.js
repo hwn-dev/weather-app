@@ -56,6 +56,7 @@ export default function Weather({
   } else {
     weatherIcon = null;
   }
+
   return (
     <div className="result-container">
       <div className="results-top">
@@ -84,7 +85,7 @@ export default function Weather({
         <div className="temperatures">
           <div>
             <h3>{temperature}&deg;</h3>
-            <h6>Current Temperature</h6>
+            <h6>Current</h6>
           </div>
           <div>
             <h3>{feelsLike}&deg;</h3>
@@ -92,11 +93,11 @@ export default function Weather({
           </div>
           <div>
             <h3>{maxTemp}&deg;</h3>
-            <h6>Max Temperature</h6>
+            <h6>High</h6>
           </div>
           <div>
             <h3>{minTemp}&deg;</h3>
-            <h6>Min Temperature</h6>
+            <h6>Low</h6>
           </div>
         </div>
         <div className="wind">
@@ -108,21 +109,24 @@ export default function Weather({
             <h6>Wind Speed</h6>
           </div>
           <div className="wind-direction">
-            <h3>
+            <div
+              className="wind-dir-icon"
+              style={{ transform: `rotate(${windDirection}deg)` }}
+            >
               <FontAwesomeIcon icon={faChevronCircleUp} />
-              {windDirection}&deg;
-            </h3>
+            </div>
+
             <h6>Wind Direction</h6>
           </div>
         </div>
         <div className="sun-times">
           <div className="sun-rise">
             <h3>{sunRise}</h3>
-            <h6>Sun Rise</h6>
+            <h6>Sunrise</h6>
           </div>
           <div className="sun-set">
             <h3>{sunSet}</h3>
-            <h6>Sun Set</h6>
+            <h6>Sunset</h6>
           </div>
         </div>
       </div>

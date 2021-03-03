@@ -40,10 +40,8 @@ export default function getDate({ timezone }) {
   }
 
   let offsetHrs = hours + timeDiffMins;
-  console.log(timezone, timeDiffMins, timeDiffHrs, offsetHrs);
 
   const todaysDate = `${day} ${date} ${month}, ${hours}:${mins}`;
-  console.log(todaysDate);
 
   return todaysDate;
 }

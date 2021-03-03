@@ -109,13 +109,16 @@ body {
 }
 
 .result-container {
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: column;
+  /* position: relative;
+  grid-template-columns: 1fr 2fr; */
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .results-top {
-  border-bottom: 1px solid #000;
+  /* border-bottom: 1px solid #000; */
   display: flex;
 }
 
@@ -178,8 +181,8 @@ body {
 .results-bottom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 65%;
+  /* justify-content: center; */
+  height: 100%;
 }
 
 .results.bottom h3 {
@@ -206,7 +209,7 @@ body {
   align-items: center;
   flex: 1 1 0px;
   font-family: "Bebas Neue", cursive;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .temperatures h3,
@@ -225,6 +228,13 @@ body {
   margin: 0;
 }
 
+.wind-dir-icon {
+  margin-bottom: 5px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .weather-results {
   font-family: "Bebas Neue", cursive;
 }
