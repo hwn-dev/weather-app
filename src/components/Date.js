@@ -1,4 +1,4 @@
-export default function getDate({ timezone }) {
+export default function today({ timezone }) {
   const months = [
     "Jan",
     "Feb",
@@ -24,7 +24,7 @@ export default function getDate({ timezone }) {
   ];
 
   let currentDate = new Date();
-  let day = days[currentDate.getDate()];
+  let day = days[currentDate.getDate() - 1]; // Why am I having to do this ????
   let date = currentDate.getDate();
   let month = months[currentDate.getMonth()];
   let hours = currentDate.getHours();
@@ -36,12 +36,13 @@ export default function getDate({ timezone }) {
   if (timeDiffMins % 60 === 0 || timeDiffMins % -60 === 0) {
     timeDiffHrs = timeDiffMins / 60;
     hours += timeDiffHrs;
-    if (hours > 24 ? (hours -= 24) && currentDate.setDate(date + 1) : hours);
+    if (hours > 24 ? (hours -= 24) : hours);
   }
 
   let offsetHrs = hours + timeDiffMins;
 
   const todaysDate = `${day} ${date} ${month}, ${hours}:${mins}`;
+  console.log(currentDate, day);
 
   return todaysDate;
 }
