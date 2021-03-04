@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { gsap } from "gsap";
 
 import Result from "./Result";
 
-const Form = () => {
+const Form = props => {
   const [location, setLocation] = useState({});
   const [details, setDetails] = useState({});
 
@@ -53,9 +53,10 @@ const Form = () => {
   function handleSubmit(e) {
     e.preventDefault();
     getWeather();
+    animations();
   }
 
-  useEffect(() => {
+  const animations = () => {
     gsap.from(".cards", {
       duration: 0.5,
       y: "25%",
@@ -76,7 +77,7 @@ const Form = () => {
       ease: "sine",
       delay: 0.9,
     });
-  }, []);
+  };
 
   return (
     <div>
@@ -93,20 +94,26 @@ const Form = () => {
         </form>
       </div>
       <div className="cards">
-        <Result
-          place={details.city}
-          country={details.country}
-          temperature={details.temp}
-          desc={details.description}
-          feelsLike={details.feelsLike}
-          maxTemp={details.maxTemp}
-          minTemp={details.minTemp}
-          windSpeed={details.windSpeed}
-          windDirection={details.windDirection}
-          sunRise={details.sunrise}
-          sunSet={details.sunset}
-          timezone={details.timezone}
-        />
+        {details.city ? (
+          <Result
+            place={details.city}
+            country={details.country}
+            temperature={details.temp}
+            desc={details.description}
+            feelsLike={details.feelsLike}
+            maxTemp={details.maxTemp}
+            minTemp={details.minTemp}
+            windSpeed={details.windSpeed}
+            windDirection={details.windDirection}
+            sunRise={details.sunrise}
+            sunSet={details.sunset}
+            timezone={details.timezone}
+          />
+        ) : (
+          <div>
+            <div className="welcome"></div>
+          </div>
+        )}
       </div>
     </div>
   );
